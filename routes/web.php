@@ -13,6 +13,7 @@ use App\Livewire\Admin\Banner\Index as BannerIndex;
 use App\Livewire\Admin\Banner\Form as BannerForm;
 use App\Livewire\Admin\Contact\Index as ContactIndex;
 use App\Livewire\Admin\Contact\Form as ContactForm;
+use App\Livewire\Cart;
 use App\Livewire\Guest\Homepage;
 use App\Livewire\Guest\ProductListing;
 use App\Livewire\Guest\ProductShow;
@@ -70,4 +71,6 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
 Route::get('/', Homepage::class)->name('guest.homepage');
 Route::get('/products', ProductListing::class)->name('products.index');
 Route::get('/product/{slug}', ProductShow::class)->name('product.show');
+Route::get('/cart', Cart::class)->name('cart.show');
+
 require __DIR__ . '/auth.php';
